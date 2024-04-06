@@ -9,6 +9,11 @@ exports.handler = async (event, context) => {
   // Costruisci la risposta da restituire
   const response = {
     statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*", // Consenti l'accesso da qualsiasi dominio
+      "Access-Control-Allow-Headers": "Content-Type", // Consenti l'header Content-Type
+      "Access-Control-Allow-Methods": "OPTIONS,POST" // Consenti solo i metodi OPTIONS e POST
+    },
     body: JSON.stringify({ massaCorporea })
   };
 
